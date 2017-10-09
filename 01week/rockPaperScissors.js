@@ -10,7 +10,7 @@ const rl = readline.createInterface({
   //If both users input the same answers, the program will return "It's a tie!". Use a function named "rockPaperScissors to evalute the input of each hand"
 function rockPaperScissors(hand1, hand2) {
   if (hand1 === hand2) {
-    return "It's a tie!";
+    return "It's a tie people!";
   }
 
 
