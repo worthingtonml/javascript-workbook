@@ -49,7 +49,7 @@ const x = 10;
 const y = 5;
 const z = 1;
 if (x > y && y > z) {
-  console.log("Show me the money!");
+  console.log("Show me the money now!");
 }
 
 //Assign values to 3 variables
