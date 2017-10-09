@@ -7,12 +7,42 @@ const rl = readline.createInterface({
   output: process.stdout
 });
 
+// User1 input of rock, paper, or scissors.
+// User2 input of rock, paper, or scissors.
+// Compare User1 input to User2 input.
+// If User1 input is 'rock' and User2 input is 'scissor', User1 wins.
+// If User1 input is 'rock' and User2 input is 'paper', User2 wins.
+// If User1 input is 'rock' and User2 input is 'rock', it's a tie.
+// If User1 input is 'paper' and User2 input is 'rock', User1 wins.
+// If User1 input is 'paper' and User2 input is 'scissors', User2 wins.
+// If User1 input is 'paper' and User2 input is 'paper', it's a tie.
+// If User1 input is 'scissors' and User2 input is 'paper', User1 wins.
+// If User1 input is 'scissors' and User2 input is 'rock', User2 wins.
+// If User1 input is 'scissors' and User2 input is 'scissors', it's a tie.
 
 function rockPaperScissors(hand1, hand2) {
+  if (hand1 === hand2) {
+    return "It's a tie!";
+  }
+  //Return tie whenever both users throw the same
 
-  // Write code here
+  if (hand1 === "rock" && hand2 === "scissors" || hand1 === "paper" && hand2 === "rock" ||
+    hand1 === "scissors" && hand2 === "paper") {
+    return "Hand one wins!"; //
+  } else if (hand1 === "scissors" && hand2 === "rock" || hand1 === "rock" && hand2 === "paper" || hand1 === "paper" && hand2 === "scissors"){
+    return "Hand two wins!";
+  }
+};
 
-}
+
+
+
+
+//compare hand1 to hand2. If the two show the same then return "it's a tie". Use a function to evaluate.
+
+
+//If it's not a tie, continue evaluating. If hand1 throws a rock and hand2 throws paper, hand 1 loses. If hand2 throws scissor then hand 1 wins. Use an if/then statement to evaluate and return winnner.
+
 
 function getPrompt() {
   rl.question('hand1: ', (answer1) => {
