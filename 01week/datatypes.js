@@ -34,14 +34,13 @@ function type() {
 }
 type();
 
-//Assign a value variables a and b.
-//return the sum of the two variables
-function adding() {
-  const a = 10;
-  const b = 5;
-  return a + b;
+//create function add that takes 2 numbers
+//return the sum of the two numbers passed 
+function add(num1, num2){
+  return number1 + number2;
 }
-adding();
+
+add(1, 2);
 
 //Assign values to 3 variables
 //Use the 'and' && operator, that only runs when 2 things are true
