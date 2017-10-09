@@ -54,7 +54,7 @@ if (x > y && y > z) {
 
 //Assign values to 3 variables
 //Use the 'or' || operator, that runs when one of two things are true
-const a = 10;
+const a = 11;
 const b = 5;
 const c = 1;
 if (x > y || y > z) {
