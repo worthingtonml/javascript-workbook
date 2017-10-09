@@ -35,7 +35,7 @@ function type() {
 type();
 
 //create function add that takes 2 numbers
-//return the sum of the two numbers passed 
+//return the sum of the two numbers passed
 function add(num1, num2){
   return number1 + number2;
 }
