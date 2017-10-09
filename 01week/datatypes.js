@@ -12,7 +12,7 @@ dateTime();
 function numberToString() {
   const num = 20;
   const n = num.toString();
-  return console.log("This number is converted " + n);
+  return console.log("This little number is converted " + n);
 }
 numberToString();
 
