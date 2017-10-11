@@ -9,21 +9,31 @@ const rl = readline.createInterface({
 
   //If both users input the same answers, the program will return "It's a tie!". Use a function named "rockPaperScissors to evalute the input of each hand"
 function rockPaperScissors(hand1, hand2) {
+  const issatie = "It's a tie people";
+  const oneWins = "Hand one wins!";
+  const twoWins = "Hand two wins!";
   if (hand1 === hand2) {
-    return "It's a tie people!";
-  }
-
-
-  //Evaluate all winning scenarios for hand1 first using === operator.
-  // If any of these scenarios occur show that hand1 is a winner.
-  //Evaluate all exact opposits using else if. Did not simply use if statement because any random input that did not fullfill winning scenarios for hand1 would return a winner for hand2, even if the input does not make sense.
-  if (hand1 === "rock" && hand2 === "scissors" || hand1 === "paper" && hand2 === "rock" ||
+    return issatie;
+  } else if (hand1==="rock" || hand1==="paper" || hand1==="scissors" ){
+    //Evaluate all winning scenarios for hand1 first using === operator.
+    // If any of these scenarios occur show that hand1 is a winner.
+    //Evaluate all exact opposits using else if. Did not simply use if statement because any random input that did not fullfill winning scenarios for hand1 would return a winner for hand2, even
+    if (hand1 === "rock" && hand2 === "scissors" || hand1 === "paper" && hand2 === "rock" ||
     hand1 === "scissors" && hand2 === "paper") {
-    return "Hand one wins!";
-  } else if (hand1 === "scissors" && hand2 === "rock" || hand1 === "rock" && hand2 === "paper" || hand1 === "paper" && hand2 === "scissors"){
-    return "Hand two wins!";
+      return oneWins;
+
+    } else {
+
+      return twoWins;
+    }
   }
 };
+
+//   } else if (hand1 === "scissors" && hand2 === "rock" || hand1 === "rock" && hand2 === "paper" || hand1 === "paper" && hand2 === "scissors"){
+//     return "Hand two wins!";
+//   }
+// }
+// };
 
 
 
