@@ -12,7 +12,7 @@ dateTime();
 function numberToString() {
   const num = 20;
   const n = num.toString();
-  return console.log("This number is converted " + n);
+  return console.log("This little number is converted " + n);
 }
 numberToString();
 
@@ -34,39 +34,58 @@ function type() {
 }
 type();
 
-//Assign a value variables a and b.
-//return the sum of the two variables
-function adding() {
-  const a = 10;
-  const b = 5;
-  return a + b;
-}
-adding();
-
-//Assign values to 3 variables
-//Use the 'and' && operator, that only runs when 2 things are true
-const x = 10;
-const y = 5;
-const z = 1;
-if (x > y && y > z) {
-  console.log("Show me the money!");
+//create function add that takes 2 numbers
+//return the sum of the two numbers passed
+function add(num1, num2){
+  return num1 + num2;
 }
 
-//Assign values to 3 variables
-//Use the 'or' || operator, that runs when one of two things are true
-const a = 10;
-const b = 5;
-const c = 1;
-if (x > y || y > z) {
-  console.log("Show me the money either way!");
+add(1, 2);
+
+// Create a function that only runs if both things are true
+// Use the and && operator, that runs if both are true
+
+function areBothTrue (x, y){
+  if (x === 15 && y === 20) {
+    return "Show me the $$$ dude!";
+  }
 }
+areBothTrue(15,20)
 
 
-//Assign values to 3 variables
-//Use the 'not equal value/type' operator, that will only run if both things are not true
-const d = 1;
-const e = 5;
-const f = 10;
-if (d !== e && e !== f) {
-  console.log("It's alive");
+// Create a function that only runs if 1 of 2 things are true
+// Use the 'or' || operator, that runs when one of two things are true
+
+function isItTrue (d, e) {
+  if (d === 10 || e === 15) {
+    return 'One of two is true!';
+  }
 }
+
+isItTrue(10,90);
+
+//Create a function with 3 parameters. Create an if statement within the function with the 'not equal value/type' operator which will only run if arguements passed are not true
+function compare(d, e, f) {
+  if (d !== e && e !== f) {
+    return 'It is alive';
+  } else {
+    return 'It is dead';
+  }
+}
+
+compare(1,2,3);
+
+// Write a JavaScript program to display the current day and time.
+// Write a JavaScript program to convert a number to a string.
+// Write a JavaScript program to convert a string to the number.
+// Write a JavaScript program that takes in different datatypes and prints out whether they are a:
+// Boolean
+// Null
+// Undefined
+// Number
+// NaN
+// String
+// Write a JavaScript program that adds 2 numbers together.
+// Write a JavaScript program that runs only when 2 things are true.
+// Write a JavaScript program that runs when 1 of 2 things are true.
+// Write a JavaScript program that runs when both things are not true.
