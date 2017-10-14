@@ -66,6 +66,11 @@ if (typeof describe === 'function') {
       assert.equal(rockPaperScissors('Paper', 'SCISSORS'), "Hand two wins!");
       assert.equal(rockPaperScissors('rock ', 'sCiSsOrs'), "Hand one wins!");
     });
+    it('should scrub input and return invalid entry if theres anything but rps' () => {
+      assert.equal(rockPaperScissors('dragon', 'dragon'), "Input is invalid");
+      assert.equal(rockPaperScissors('Paper', 'SCISSORS'), "Input is invalid");
+      assert.equal(rockPaperScissors('rock ', 'sCiSsOrs'), "Input is invalid");
+    });
   });
 } else {
 
