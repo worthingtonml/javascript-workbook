@@ -34,39 +34,43 @@ function type() {
 }
 type();
 
-//Assign a value variables a and b.
-//return the sum of the two variables
-function adding() {
-  const a = 10;
-  const b = 5;
-  return a + b;
+//create function add that takes 2 numbers
+//return the sum of the two numbers passed
+function add(num1, num2) {
+  return num1 + num2,
+    console.log('line 41');
 }
-adding();
+add(1, 2);
 
-//Assign values to 3 variables
-//Use the 'and' && operator, that only runs when 2 things are true
-const x = 10;
-const y = 5;
-const z = 1;
-if (x > y && y > z) {
-  console.log("Show me the $$$ dude!");
-}
+// Create a function that only runs if both things are true
+// Use the and && operator, that runs if both are true
 
-//Assign values to 3 variables
-//Use the 'or' || operator, that runs when one of two things are true
-const a = 11;
-const b = 5;
-const c = 1;
-if (x > y || y > z) {
-  console.log("Show me the $$$ either way!");
+function areBothTrue(x, y) {
+  if (x && y) {
+    return "Show me the $$$ dude!";
+  }
 }
+areBothTrue(15, 20);
 
 
-//Assign values to 3 variables
-//Use the 'not equal value/type' operator, that will only run if both things are not true
-const d = 1;
-const e = 5;
-const f = 10;
-if (d !== e && e !== f) {
-  console.log("It's alive");
+// Create a function that only runs if 1 of 2 things are true
+// Use the 'or' || operator, that runs when one of two things are true
+
+function isItTrue(d, e) {
+  if (d || e) {
+    return 'One of two is true!';
+  }
 }
+
+isItTrue(10, 4);
+
+//Write a JavaScript program that runs when both things are not true.
+function compare(d, e) {
+  if (!d && !e) {
+    return 'It is alive';
+  } else {
+    return 'It is dead';
+  }
+}
+
+compare(1, 2);
