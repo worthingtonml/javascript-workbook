@@ -12,7 +12,7 @@ function rockPaperScissors(hand1, hand2) {
   const issatie = "It's a tie!";
   const oneWins = "Hand one wins!";
   const twoWins = "Hand two wins!";
-  if (hand1 && hand2 === "rock" || hand1 && hand2 === "paper" || hand1 && hand2 === "scissors") {
+  if (hand1 === "rock" || hand1 === "paper" || hand1 === "scissors") {
     if (hand1 === hand2) {
       return issatie;
     } else if (hand1 === "rock" && hand2 === "scissors" || hand1 === "paper" && hand2 === "rock" ||
