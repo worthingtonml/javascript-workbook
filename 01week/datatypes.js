@@ -18,13 +18,19 @@ numberToString();
 
 
 //Use method parseInt to convert a number to a string.
-function stringToNumber() {
-  const string = "20";
-  const b = parseInt(string);
-  return console.log("This string is converted " + b);
-}
-stringToNumber();
+// function stringToNumber() {
+//   const string = "20";
+//   const b = parseInt(string);
+//   return console.log("This string is converted " + b);
+// }
+// stringToNumber();
 
+const stringToNumber=(x)=>{
+return parseInt(x)
+}
+stringToNumber('17')
+stringToNumber('8')
+stringToNumber('hello')
 
 //Use method typeof to convert number to string
 function type() {
@@ -44,6 +50,7 @@ add(1, 2);
 
 // Create a function that only runs if both things are true
 // Use the and && operator, that runs if both are true
+//if arguement 1 evaluates to true and arguement 2 evaluates to true, then run the code block
 
 function areBothTrue(x, y) {
   if (x && y) {
@@ -67,10 +74,7 @@ isItTrue(10, 4);
 //Write a JavaScript program that runs when both things are not true.
 function compare(d, e) {
   if (!d && !e) {
-    return 'It is alive';
-  } else {
-    return 'It is dead';
-  }
+    return 'both are false'
 }
 
 compare(1, 2);
