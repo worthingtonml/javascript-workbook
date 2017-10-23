@@ -59,18 +59,24 @@ if (typeof describe === 'function') {
     it('should detect which hand won', () => {
       assert.equal(rockPaperScissors('rock', 'paper'), "Hand two wins!");
       assert.equal(rockPaperScissors('paper', 'scissors'), "Hand two wins!");
+      assert.equal(rockPaperScissors('scissors', 'rock'), "Hand two wins!");
       assert.equal(rockPaperScissors('rock', 'scissors'), "Hand one wins!");
+      assert.equal(rockPaperScissors('paper', 'rock'), "Hand one wins!");
+      assert.equal(rockPaperScissors('scissors', 'paper'), "Hand one wins!");
     });
     it('should scrub input to ensure lowercase with "trim"ed whitepace', () => {
       assert.equal(rockPaperScissors('rOcK', ' paper '), "Hand two wins!");
       assert.equal(rockPaperScissors('Paper', 'SCISSORS'), "Hand two wins!");
+      assert.equal(rockPaperScissors('sCiSsOrs','rock '), "Hand two wins!");
+      assert.equal(rockPaperScissors(' paper ', 'rOcK'), "Hand one wins!");
+      assert.equal(rockPaperScissors('SCISSORS','Paper'), "Hand one wins!");
       assert.equal(rockPaperScissors('rock ', 'sCiSsOrs'), "Hand one wins!");
     });
-    it('Test input to ensure its a string' () => {
-      assert.equal(rockPaperScissors(34, 'Paper'), "Input needs to be Rock Paper Scissors");
+    it('should ensure only strings are considered', () => {
+      assert.equal(rockPaperScissors(42, 'paper'), "Rock, Paper, Scissors Only");
     });
-    it('Test input to ensure user is only typing in one entry' () => {
-      assert.equal(rockPaperScissors('paper rock', 'rock paper'), "Only select one option");
+    it('should ensure only one entry is entered at a time', () => {
+      assert.equal(rockPaperScissors('paper paper', 'rock'), "One entry at a time please");
     });
   });
 } else {
