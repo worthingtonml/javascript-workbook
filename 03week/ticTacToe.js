@@ -40,7 +40,8 @@ function horizontalWin() {
 
 function verticalWin() {
   //check winning combinations 0,1,2 & 1, 1, 2 & 2,1,2
-}
+
+1}
 
 function diagonalWin() {
   // Your code here

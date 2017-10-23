@@ -66,10 +66,11 @@ if (typeof describe === 'function') {
       assert.equal(rockPaperScissors('Paper', 'SCISSORS'), "Hand two wins!");
       assert.equal(rockPaperScissors('rock ', 'sCiSsOrs'), "Hand one wins!");
     });
-    it('should scrub input and return invalid entry if theres anything but rps' () => {
-      assert.equal(rockPaperScissors('dragon', 'dragon'), "Input is invalid");
-      assert.equal(rockPaperScissors('Paper', 'SCISSORS'), "Input is invalid");
-      assert.equal(rockPaperScissors('rock ', 'sCiSsOrs'), "Input is invalid");
+    it('Test input to ensure its a string' () => {
+      assert.equal(rockPaperScissors(34, 'Paper'), "Input needs to be Rock Paper Scissors");
+    });
+    it('Test input to ensure user is only typing in one entry' () => {
+      assert.equal(rockPaperScissors('paper rock', 'rock paper'), "Only select one option");
     });
   });
 } else {
