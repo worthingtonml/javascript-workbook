@@ -12,6 +12,17 @@ let board = [
   [' ', ' ', ' ']
 ];
 
+//the board is just an array, to get in the top left cell you'd just call it by 0, 0
+
+/* Draw a 3x3 diminsioned box
+Identify all win combinations for player 1
+Assign "X" to player 1 and "O" to player 2
+Player one inputs X as the first letter to occupy space on the board.
+Player two inputs O second, filling an open space on the board. Ensure that player two cannot fill the same space as player 1.
+Player one goes next and occupies an open space on the board that is not already occupied by an "X" or an "O" check for wins in rows, columns, and diagnals. Check for win.
+Identify a winner once a win scenario has been fulfilled by player 1 or player 2. Alert winner. If all spaces have been filled nor has a win scenario been fulfilled, alert players appropriately.
+Clear all occupied spaces on the board allowing player one to submit the first "X" on the board to restart the game.*/
+
 let playerTurn = 'X';
 
 function printBoard() {
@@ -24,12 +35,13 @@ function printBoard() {
 }
 
 function horizontalWin() {
-  // Your code here
+  //check winning combinations 0,1,2 & 1, 1, 2 & 2,1,2
 }
 
 function verticalWin() {
-  // Your code here
-}
+  //check winning combinations 0,1,2 & 1, 1, 2 & 2,1,2
+
+1}
 
 function diagonalWin() {
   // Your code here

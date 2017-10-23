@@ -7,40 +7,36 @@ const rl = readline.createInterface({
   output: process.stdout
 });
 
-  //If both users input the same answers, the program will return "It's a tie!". Use a function named "rockPaperScissors to evalute the input of each hand"
+// User1 input of rock, paper, or scissors.
+// User2 input of rock, paper, or scissors.
+// Compare User1 input to User2 input.
+// If User1 input is 'rock' and User2 input is 'scissor', User1 wins.
+// If User1 input is 'rock' and User2 input is 'paper', User2 wins.
+// If User1 input is 'rock' and User2 input is 'rock', it's a tie.
+// If User1 input is 'paper' and User2 input is 'rock', User1 wins.
+// If User1 input is 'paper' and User2 input is 'scissors', User2 wins.
+// If User1 input is 'paper' and User2 input is 'paper', it's a tie.
+// If User1 input is 'scissors' and User2 input is 'paper', User1 wins.
+// If User1 input is 'scissors' and User2 input is 'rock', User2 wins.
+// If User1 input is 'scissors' and User2 input is 'scissors', it's a tie.
+
 function rockPaperScissors(hand1, hand2) {
-  const issatie = "It's a tie people";
-  const oneWins = "Hand one wins!";
-  const twoWins = "Hand two wins!";
-  if (hand1==="rock" || hand1==="paper" || hand1==="scissors") {
-
   if (hand1 === hand2) {
-    return issatie;
-  }else if (hand1 === "rock" && hand2 === "scissors" || hand1 === "paper" && hand2 === "rock" ||
-  hand1 === "scissors" && hand2 === "paper"){
+    return "It's a tie!";
+  }
+  //Return tie whenever both users throw the same
 
-      return oneWins;
-
-    } else {
-
-      return twoWins;
-    }
-  } else {
-  return "no dragons";
-}
+  if (hand1 === "rock" && hand2 === "scissors" || hand1 === "paper" && hand2 === "rock" ||
+    hand1 === "scissors" && hand2 === "paper") {
+    return "Hand one wins!"; //
+  } else if (hand1 === "scissors" && hand2 === "rock" || hand1 === "rock" && hand2 === "paper" || hand1 === "paper" && hand2 === "scissors"){
+    return "Hand two wins!";
+  }
 };
 
-//Evaluate all winning scenarios for hand1 first using === operator.
-// If any of these scenarios occur show that hand1 is a winner.
-//Evaluate all exact opposits using else if. Did not simply use if statement because any random input that did not fullfill winning scenarios for hand1 would return a winner for hand2, even
+//compare hand1 to hand2. If the two show the same then return "it's a tie". Use a function to evaluate.
 
-//   } else if (hand1 === "scissors" && hand2 === "rock" || hand1 === "rock" && hand2 === "paper" || hand1 === "paper" && hand2 === "scissors"){
-//     return "Hand two wins!";
-//   }
-// }
-// };
-
-
+//If it's not a tie, continue evaluating. If hand1 throws a rock and hand2 throws paper, hand 1 loses. If hand2 throws scissor then hand 1 wins. Use an if/then statement to evaluate and return winnner.
 
 function getPrompt() {
   rl.question('hand1: ', (answer1) => {
@@ -64,17 +60,24 @@ if (typeof describe === 'function') {
     it('should detect which hand won', () => {
       assert.equal(rockPaperScissors('rock', 'paper'), "Hand two wins!");
       assert.equal(rockPaperScissors('paper', 'scissors'), "Hand two wins!");
+      assert.equal(rockPaperScissors('scissors', 'rock'), "Hand two wins!");
       assert.equal(rockPaperScissors('rock', 'scissors'), "Hand one wins!");
+      assert.equal(rockPaperScissors('paper', 'rock'), "Hand one wins!");
+      assert.equal(rockPaperScissors('scissors', 'paper'), "Hand one wins!");
     });
     it('should scrub input to ensure lowercase with "trim"ed whitepace', () => {
       assert.equal(rockPaperScissors('rOcK', ' paper '), "Hand two wins!");
       assert.equal(rockPaperScissors('Paper', 'SCISSORS'), "Hand two wins!");
+      assert.equal(rockPaperScissors('sCiSsOrs','rock '), "Hand two wins!");
+      assert.equal(rockPaperScissors(' paper ', 'rOcK'), "Hand one wins!");
+      assert.equal(rockPaperScissors('SCISSORS','Paper'), "Hand one wins!");
       assert.equal(rockPaperScissors('rock ', 'sCiSsOrs'), "Hand one wins!");
     });
-    it('should scrub input and return invalid entry if theres anything but rock paper scissors' () => {
-      assert.equal(rockPaperScissors('dragon', 'dragon'), "Input is invalid");
-      assert.equal(rockPaperScissors('Paper', 'SCISSORS'), "Input is invalid");
-      assert.equal(rockPaperScissors('rock ', 'sCiSsOrs'), "Input is invalid");
+    it('should ensure only strings are considered', () => {
+      assert.equal(rockPaperScissors(42, 'paper'), "Rock, Paper, Scissors Only");
+    });
+    it('should ensure only one entry is entered at a time', () => {
+      assert.equal(rockPaperScissors('paper paper', 'rock'), "One entry at a time please");
     });
   });
 } else {
