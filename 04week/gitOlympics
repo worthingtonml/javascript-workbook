@@ -4,4 +4,4 @@ arr.forEach((val) => {
 console.log(val);
 })
 }
-printListOfOlympians(['Corey', 'Marc', 'Mike']);
+printListOfOlympians(['Corey', 'Mark', 'Mike']);
