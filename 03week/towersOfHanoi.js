@@ -20,19 +20,34 @@ function printStacks() {
 }
 
 function movePiece() {
-  // Your code here
+  // Only allow the last position to move from one stack to another stack.
+
 
 }
 
-function isLegal() {
-  // Your code here
-
+function isLegal(tower) {
+  // Checks if the move is legal
+  for (i = 0; i < tower.length - 1; i++) {
+    if (tower[i] > tower[i + 1]) {
+      return "Is Valid";
+    } else {
+      return "Is not Valid";
+    }
+  }
 }
+isLegal(stacks.a);
+
 
 function checkForWin() {
-  // Your code here
-
+  // Checks if there is a winner
+  for (i = 0; i < stacks.c.length - 1; i++) {
+    if (stacks.c[i] > stacks.c[i + 1] && stacks.c.length === 4) {
+      return "winner";
+    }
+  }
 }
+checkForWin();
+
 
 function towersOfHanoi(startStack, endStack) {
   // Your code here
@@ -51,4 +66,10 @@ function getPrompt() {
 
 getPrompt();
 
+// if I ran towersOfHanoi('a','b'), the stacks would look like (a)(4, 3, 2,) (b)(1)
+// c()
 
+// Only the top disks of (a),(b),(c) are movable at any given time.(a) (4,3) (b)(1) (c)2
+// Only the smaller disks can stack on top of larger disks (a)(), (b)(), (c)(4,3,2,1)
+// Try to break the game in your tests
+//a lot of bigger companies do tdd, it takes time. Startup companies may not because they may need to get stuff out quicker
