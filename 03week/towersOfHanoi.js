@@ -25,17 +25,17 @@ function movePiece() {
 
 }
 
-function isLegal(tower) {
-  // Checks if the move is legal
-  for (i = 0; i < tower.length - 1; i++) {
-    if (tower[i] > tower[i + 1]) {
-      return "Is Valid";
-    } else {
-      return "Is not Valid";
-    }
-  }
-}
-isLegal(stacks.a);
+// function isLegal(tower) {
+//   // Checks if the move is legal
+//   for (i = 0; i < tower.length - 1; i++) {
+//     if (tower[i] > tower[i + 1]) {
+//       return "Is Valid";
+//     } else {
+//       return "Is not Valid";
+//     }
+//   }
+// }
+// isLegal(stacks.a);
 
 
 function checkForWin() {
